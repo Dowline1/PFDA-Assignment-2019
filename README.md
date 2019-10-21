@@ -1,7 +1,20 @@
 # PFDA-Assignment-2019
 Git repository for Assignment 2019 for module Programming for Data Analysis, investigation in Numpy random number generator. References for Readme.md will be found at the end of the document, references on any code being used will all be referenced as they are used within the Jupyter Notebook.
 
-## 1. Purpose of Package
+## 1. Running the Code
+1. Click this [link](https://github.com/Dowline1/PFDA-Assignment-2019) for my Github repository.
+2. Click the download button to save a copy of the repository on your machine.
+3. Make sure you have Python installed including Jupyter, if you require installation please folllow instructions in this [link](https://www.anaconda.com/distribution/) to download Python via Anaconda.
+4. Use your command line such as CMDER to navigate to the folder housing the Git repository, download for CMDER found via this [link](https://cmder.net/).
+5. Once in the folder type the command "Jupyter Notebook" and clcik enter.
+6. This will open a Jupyter Notebook in your default web browser, click on the file "PFDA-Assignment-2019.ipynb".
+7. Once in the Jupyter Notebook itself click on Kernel then Restart And Run All as per **image below**, this will run the code and generate all graphs.
+
+
+<img  src="Resources/Jupyter_Instructions.png">
+
+
+## 2. Purpose of Package
 
 ### Purpose
 The Numpy Random module is a number generator that can be used in Python to generate random numbers to be used in simulations in data analysis. These random numbers are generated in numpy by using the Mersenne Twister algorithm to generate the pseudo random numbers. In order to make the analysis repeatable and so that the same random numbers are generated in the Jupyter Notebook accompanying this readme file I will predefine the seed to **35**. If the seed was not defined initially numpy would automatically define a new seed value each time the code was re-run based on the system's random number generator device or the machines clock.
@@ -17,7 +30,14 @@ Post Francis Galton's publicaiton on the humble dice however in the mid 1940's t
 The Ferranti MK 1 was the first real computer that came pre-built with a random number instruction that generated 20 random bits at a time using electrical noise. This feature was implemented and designed by Alan Turing. The instructions however infuriated programmers at the time as it created to much uncertainty as it was impossible to test with programs as the numbers generated could no create data that demonstrated repeatability.
 
 
-### Random Number Applications
+### Mersenne Twister Algorithm
+
+
+### Pseudorandom Numbers
+
+
+## 3a. Use of Simple Random Data Functions
+
 Random Numbers are generally reffered to in field of staistics whereby they are utilised as a comparisson sample on a general study sample. A feature of random numbers that most individuals may not be aware of is that they need to have certain characteristics in order to be used correctly. These properties include the distribution of the numbers, as once there is an understanding of how the numbers are distributed for example a normal distribution, we can then use this understanding to generate our random numbers to aid in the study we are undertaking.
 
 
@@ -30,22 +50,17 @@ The sample data can then be used as a simulation of the data to help determine m
 There are several different types of variable distribution, in this assignment I will try to explain and represent 5 different kinds of variable distributions and there random number generation using Numpy's .random function.
 
 
-### Mersenne Twister Algorithm
+The Random functions in Numpy can be used to generate such sample data to be used in simulations as described above, figure 2 below shows a plot of 100,000 random numbers generated using the randn function in Numby generating an array of numbers that are normally distributed around a predefined mean (in this example 10). For a real world scenario this method could be used to simulate the life time of tube lights and the mean can be adjusted to the relevant sampled mean to create a meaningful plot of the distribution.
+
+<img width="800" height="500"  src="Resources/Random_Number_Normal_Distribution_Hist.png">
+
+## 3b. Use of Permutations Functions
 
 
-### Pseudorandom Numbers
+## 4. Distributions
 
 
-## 2a. Use of Simple Random Data Functions
-
-
-## 2b. Use of Permutations Functions
-
-
-## 3. Distributions
-
-
-## 4. Use of Seeds
+## 5. Use of Seeds
 
 ### Seeds in Random Numbers
 
@@ -59,3 +74,4 @@ There are several different types of variable distribution, in this assignment I
 - Gaussian Property [link](http://users.isr.ist.utl.pt/~mir/pub/probability.pdf)
 - Numpy.Random Package Documentation [link](https://docs.scipy.org/doc/numpy-1.16.0/reference/routines.random.html)
 - Numpy.Random what does it do [link](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781785285110/2/ch02lvl1sec16/numpy-random-numbers#targetText=NumPy%20random%20numbers,Twister,%20to%20generate%20pseudorandom%20numbers.)
+- Permutations Definition [link](https://stattrek.com/statistics/dictionary.aspx?definition=permutation)
