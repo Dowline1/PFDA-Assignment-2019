@@ -50,14 +50,48 @@ The sample data can then be used as a simulation of the data to help determine m
 There are several different types of variable distribution, in this assignment I will try to explain and represent 5 different kinds of variable distributions and there random number generation using Numpy's .random function.
 
 
-The Random functions in Numpy can be used to generate such sample data to be used in simulations as described above, figure 2 below shows a plot of 100,000 random numbers generated using the randn function in Numby generating an array of numbers that are normally distributed around a predefined mean (in this example 10). For a real world scenario this method could be used to simulate the life time of tube lights and the mean can be adjusted to the relevant sampled mean to create a meaningful plot of the distribution.
+The Random functions in Numpy can be used to generate such sample data to be used in simulations as described above, figure 1 below shows a plot of 100,000 random numbers generated using the randn function in Numby generating an array of numbers that are normally distributed around a predefined mean (in this example 10). For a real world scenario this method could be used to simulate the life time of tube lights and the mean can be adjusted to the relevant sampled mean to create a meaningful plot of the distribution.
 
 <img width="800" height="500"  src="Resources/Random_Number_Normal_Distribution_Hist.png">
 
 ## 3b. Use of Permutations Functions
 
+Complete as per analysis from Jupyter Notebook
 
 ## 4. Distributions
+
+### Uniform Distribution
+
+The uniform distribution is called such as the probability for any of the outcomes to occur are the same, because of this even distribution of possibility a uniformally distributed dataset does not have a mode as the values are all equally common. This equal distribution of values results in a rectangular shaped plot when rendered as a histogram removing the need for a KDE line.
+
+
+There are two different types of uniform distribution, discrete where a 6 sided die can land on the numbers 1 to 6 included but numbers like 1.5 or 3.7 are not possible, continuous where between the numbers 1 and 6 there are infinite number of points between them as we move the decimal place. 
+
+
+Figure 2 below shows a simulation of the distribution of results of a six sided die rolled 100,000 times as calculated using the accompanying jupyter notebook, it shows the equal likeliness of each value of the die resulting from the throw. I found it an interesting thought to calculate the mean of 4 which when simply calculated without any visualisation of the complete dataset may lead some to assume that 4 is the most likely result to occur, but is in actual fact simply the centre value of the dataset and highlights the importance of plotting datasets to understand the full picture. 
+
+
+<img width="800" height="500"  src="Resources/Random_Number_Uniform_Distribution_Hist_2.png">
+
+
+### Normal Distribution
+
+A normal distribution also commonly known as the bell shaped curve occurs naturally in many instances in the real world, the highest peak of the curve indicates the mean of the dataset with 50% of the data occuring either side of the mean. The below image shows the percentage distribution of data accross a normal distribution as per the emirical rule, the rule shows that 68% of the data falls within one standard deviation, 95% within two standard deviations and 99.7% within three standard deviations.
+
+
+<img src="Resources/Empirical_Rule.png">
+
+
+A smaller standard deviation in a dataset indicates a tighter spread around the mean of the data resulting in a taller peak in the curve. In a normal distribution the mean, mode and median are all equal to each other with the total area beneath the curve being equal to 1.
+
+
+The histogram in figure 3 shows a real world simulation of a normally distributed dataset generated using the random.normal function to simulate results as specified in reference Irish male Avg Height and SD below, with mean = 177cm and sd = 7.42cm which are the results for adult Irish Males.
+
+
+Also included in the histogram are dotted vertical lines along the x-axis which indicate standard deviations to the right and left of the mean. As per the emperial rule we can see that 68% of the populations height lies between 169.58cm and 184.42cm or one standard deviation. From using this graph Irish Males can determine what quartile of the population does there height lie, specifically my height at 175.26cm resides in the 40.73% percentile of the population.
+
+
+<img width="800" height="500"  src="Resources/Random_Number_Normal_Distribution_Hist_2.png">
 
 
 ## 5. Use of Seeds
@@ -75,3 +109,11 @@ The Random functions in Numpy can be used to generate such sample data to be use
 - Numpy.Random Package Documentation [link](https://docs.scipy.org/doc/numpy-1.16.0/reference/routines.random.html)
 - Numpy.Random what does it do [link](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781785285110/2/ch02lvl1sec16/numpy-random-numbers#targetText=NumPy%20random%20numbers,Twister,%20to%20generate%20pseudorandom%20numbers.)
 - Permutations Definition [link](https://stattrek.com/statistics/dictionary.aspx?definition=permutation)
+- Why Shuffle Data [link](https://datascience.stackexchange.com/questions/24511/why-should-the-data-be-shuffled-for-machine-learning-tasks)
+- Difference Shuffle and Permutation [link](https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy)
+- Types of Distribution [link](https://www.datacamp.com/community/tutorials/probability-distributions-pythonju)
+- What is a Uniform Distribution [link](https://www.thoughtco.com/uniform-distribution-3126573)
+- Unifrom Distribution Investopedia [link](https://www.investopedia.com/terms/u/uniform-distribution.asp)
+- Normal Distribution Notes [link](https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/normal-distributions/)
+- Height - Normal Distribution Example [link](https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/#targetText=The%20canonical%20example%20of%20the,a%20normal%20(Gaussian)%20distribution.&targetText=The%20normal%20distribution%20is%20a,of%20heights%20for%20some%20purposes.)
+- Irish Male Avg Height and SD [link](https://tall.life/height-percentile-calculator-age-country/)
