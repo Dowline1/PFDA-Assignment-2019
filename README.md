@@ -94,6 +94,26 @@ Also included in the histogram are dotted vertical lines along the x-axis which 
 <img width="800" height="500"  src="Resources/Random_Number_Normal_Distribution_Hist_2.png">
 
 
+## Binomial Distribution
+
+Binomial distribution is a probability distribution that looks at the likelihood of a value occuring, in it's simplest form it can be explained by evaluating the outcome of a coin flip but other more complex examples can be used like rolling a die or likelihood of a card appearing from a shuffled deck. To keep things simple I used the example of a coin flip and generated an array of random numbers using the random.binomial function in numpy generating figure 4 below with bars representing the number of times head was flipped in a series of 10 flips with the higher the peak the higher the probability.
+
+
+<img width="800" height="500"  src="Resources/Random_Number_Binomial_Distribution_Hist.png">
+
+
+For my parameters I evaluated the frequency of heads occuring in a series of 10 coin flips and then repeated this 100,000 times to generate my sample data to be used in my simulations. As there are only 2 sides to a coin the probability of either occuring is 50% so the likelihood is interchangeable between heads and tails being flipped. As we get closer to the thoretical number of heads occuring being 5 as 50% of 10 flips is 5 the peaks get higher. This data can be further used to predict what the likelihood of exactly x number heads occuring.
+
+
+Using my randomly generated array I researched the documentation aswell as other sources so that I could determine from my dataset what the likelihood would be that when a coin was flipped 10 times of exactly 5 heads resulting also taking into account repeating the experiment 100,000 times. The result was that I was able to determine that the likelihood of this occuring was 24.77%, the code can be adjusted to calculate the likelihood of an other number of heads occuring easily by changing the variables which I have highlighted in the jupyter notebook.
+
+
+The code can be further altered easily to evaluate any other scenario which results in a Yes or No response such as the roll of a die resulting in a 1 or 5 for example by changing the probability parameter to 33.33 as there is a 1 in 3 chance of this occuring. 
+
+
+The binomial distribution is a discrete distribution that is used in statistics as opposed to a continious distribution as it only counts 2 states with 1 typically being sucess or 0 meaning a failure given a certain number of attempts and then repeated again a number of times whereby all that is needed to evaluate is the probability of the result and the number of attempts making it a very useful and common form of distribution. Real world examples that I can think of could be the number of clinical trials to be completed in order to determine to a certain level of confidence that the efficacy of a drug is beneficial to a cohort of patients.
+
+
 ## 5. Use of Seeds
 
 ### Seeds in Random Numbers
@@ -117,3 +137,5 @@ Also included in the histogram are dotted vertical lines along the x-axis which 
 - Normal Distribution Notes [link](https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/normal-distributions/)
 - Height - Normal Distribution Example [link](https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/#targetText=The%20canonical%20example%20of%20the,a%20normal%20(Gaussian)%20distribution.&targetText=The%20normal%20distribution%20is%20a,of%20heights%20for%20some%20purposes.)
 - Irish Male Avg Height and SD [link](https://tall.life/height-percentile-calculator-age-country/)
+- Binomial Distribution Information [link](https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/)
+- Simulating Coin toss in Python [link](https://cmdlinetips.com/2018/12/simulating-coin-toss-experiment-with-binomial-random-numbers-using-numpy/)
