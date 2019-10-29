@@ -33,8 +33,6 @@ The Ferranti MK 1 was the first real computer that came pre-built with a random 
 ### Mersenne Twister Algorithm
 
 
-### Pseudorandom Numbers
-
 
 ## 3a. Use of Simple Random Data Functions
 
@@ -94,7 +92,7 @@ Also included in the histogram are dotted vertical lines along the x-axis which 
 <img width="800" height="500"  src="Resources/Random_Number_Normal_Distribution_Hist_2.png">
 
 
-## Binomial Distribution
+### Binomial Distribution
 
 Binomial distribution is a probability distribution that looks at the likelihood of a value occuring, in it's simplest form it can be explained by evaluating the outcome of a coin flip but other more complex examples can be used like rolling a die or likelihood of a card appearing from a shuffled deck. To keep things simple I used the example of a coin flip and generated an array of random numbers using the random.binomial function in numpy generating figure 4 below with bars representing the number of times head was flipped in a series of 10 flips with the higher the peak the higher the probability.
 
@@ -114,9 +112,31 @@ The code can be further altered easily to evaluate any other scenario which resu
 The binomial distribution is a discrete distribution that is used in statistics as opposed to a continious distribution as it only counts 2 states with 1 typically being sucess or 0 meaning a failure given a certain number of attempts and then repeated again a number of times whereby all that is needed to evaluate is the probability of the result and the number of attempts making it a very useful and common form of distribution. Real world examples that I can think of could be the number of clinical trials to be completed in order to determine to a certain level of confidence that the efficacy of a drug is beneficial to a cohort of patients.
 
 
+### Poisson Distribution
+
+The Poisson Distribution is a discrete distribution that is used to demonstrate the nunmber of times that an event is likely to occur with a specified amount of time which occur at a constant rate named after the mathematician Siméon Denis Poisson. In the real world applicaiton of Poisson Distributions in simulations can be used to estimate sales based on previous lambda values to represent the variance allowing for management to determine optimal staff numbers to deal with the demand.
+
+
+In my below KDE plot I simulated data using the random.poisson function to try and replicate the visualisation that was discussed in my references on the number of shooting stars in an hour period which follows a poisson distribution. In the article the author discusses watching shooting stars as a child when he was told that around 5 shooting stars were expected to occur within a 1 hour period, the 5 would become my lambda value to represent 5 shooting stars within an hour period with the number of observations set to 1,000.
+
+
+<img width="800" height="500"  src="Resources/Random_Number_Poisson_Distribution_Hist.png">
+
+
+I went on in my analysis to include marker points on my plot to represent the statistical possibility of each number of meteorite observations to occur withing an hour period with labels of the possibility in decimal. The plot shows the probability of our lambda value of 5 occuring as being 17% and allows for additional querying of the data like the probability of 5 or more observations by simply adding the percentage from and to the points i.e. 5 or more observations equals56% probability.
+
+
+Using the example of shooting star observations we can then utilise the Poisson Distribution to make predictions on the likely number of shooting stars that we will see on subsequent nights or maybe the number of flu vaccines that we may sell along with combining this with data we have on the seasonality of the flu virus and when best to have our manufacturng campaigns to meet the demand. Applications I understand from the distribution are very powerful and could be well utilised in a demand forecasting nature using the model to better place a business to take advantage of the oppurtunities of sales determined from Poisson predictions.
+
+
+
+
+
 ## 5. Use of Seeds
 
 ### Seeds in Random Numbers
+
+### Pseudorandom Numbers
 
 
 ## Conclusion
@@ -139,3 +159,5 @@ The binomial distribution is a discrete distribution that is used in statistics 
 - Irish Male Avg Height and SD [link](https://tall.life/height-percentile-calculator-age-country/)
 - Binomial Distribution Information [link](https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/)
 - Simulating Coin toss in Python [link](https://cmdlinetips.com/2018/12/simulating-coin-toss-experiment-with-binomial-random-numbers-using-numpy/)
+- Common Data Science Distributions [link](https://www.analyticsvidhya.com/blog/2017/09/6-probability-distributions-data-science/)
+- Poisson Distribution World Example [link](https://towardsdatascience.com/the-poisson-distribution-and-poisson-process-explained-4e2cb17d459)
