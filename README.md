@@ -1,5 +1,5 @@
 # PFDA-Assignment-2019
-Git repository for Assignment 2019 for module Programming for Data Analysis, investigation in Numpy random number generator. References for Readme.md will be found at the end of the document, references on any code being used will all be referenced as they are used within the Jupyter Notebook.
+Git repository for Assignment 2019 for module Programming for Data Analysis, investigation into Numpy random number generator. References for Readme.md will be found at the end of the document, references on any code being used will all be referenced as they are used within the Jupyter Notebook.
 
 ## 1. Running the Code
 1. Click this [link](https://github.com/Dowline1/PFDA-Assignment-2019) for my Github repository.
@@ -9,7 +9,6 @@ Git repository for Assignment 2019 for module Programming for Data Analysis, inv
 5. Once in the folder type the command "Jupyter Notebook" and clcik enter.
 6. This will open a Jupyter Notebook in your default web browser, click on the file "PFDA-Assignment-2019.ipynb".
 7. Once in the Jupyter Notebook itself click on Kernel then Restart And Run All as per **image below**, this will run the code and generate all graphs.
-
 
 <img  src="Resources/Jupyter_Instructions.png">
 
@@ -21,10 +20,10 @@ The Numpy Random module is a number generator that can be used in Python to gene
 
 
 ### History of Random Numbers
-Statistician Francis Galton wrote in his publicaiton of Nature back in the 1890's that “As an instrument for selecting at random, I have found nothing superior to dice,”. Having the ability to on demand create numbers that are distributed in a desired fashion would reduce the time taken up by sampling as you could generate your own with the click of a button. The kind of number generation required to lend itself to more complex statistical analysis for example efficacy of a drug to treat a certain indication or determining the clinical trial size to determine this efficacy could not be generated from a simple roll of the dice unfortunately.
+Statistician Francis Galton wrote in his publication in Nature back in the 1890's that “As an instrument for selecting at random, I have found nothing superior to dice,”. Having the ability to on demand create numbers that are distributed in a desired fashion would reduce the time taken up by sampling as you could generate your own with the click of a button. The kind of number generation required to lend itself to more complex statistical analysis for example efficacy of a drug to treat a certain indication or determining the clinical trial size to determine this efficacy could not be generated from a simple roll of the dice unfortunately.
 
 
-Post Francis Galton's publicaiton on the humble dice however in the mid 1940's the world took a step closer to modern times afirming that more random numbers where required that as mentioned already that the humble dice could not generate. RAND corporation came about with it's machine of the future the random pulse generator which was run for a period of time with results published in there book titled "A Million Random Digits with 100,000 Normal Deviates". What would now seem like a very strange undertaking was back then considered a breakthrough as for the first time there was a sequesnce of high quality random numbers to draw upon for those in need of such.
+Post Francis Galton's publicaiton on the humble dice however in the mid 1940's the world took a step closer to modern times afirming that more random numbers where required than as mentioned already the humble dice could generate. RAND corporation came about with it's machine of the future the random pulse generator which was run for a period of time with results published in there book titled "A Million Random Digits with 100,000 Normal Deviates". What would now seem like a very strange undertaking was back then considered a breakthrough as for the first time there was a sequesnce of high quality random numbers to draw upon for those in need of such.
 
 
 The Ferranti MK 1 was the first real computer that came pre-built with a random number instruction that generated 20 random bits at a time using electrical noise. This feature was implemented and designed by Alan Turing. The instructions however infuriated programmers at the time as it created to much uncertainty as it was impossible to test with programs as the numbers generated could no create data that demonstrated repeatability.
@@ -32,7 +31,7 @@ The Ferranti MK 1 was the first real computer that came pre-built with a random 
 
 ## 3a. Use of Simple Random Data Functions
 
-Random Numbers are generally reffered to in field of staistics whereby they are utilised as a comparisson sample on a general study sample. A feature of random numbers that most individuals may not be aware of is that they need to have certain characteristics in order to be used correctly. These properties include the distribution of the numbers, as once there is an understanding of how the numbers are distributed for example a normal distribution, we can then use this understanding to generate our random numbers to aid in the study we are undertaking.
+Random Numbers are generally reffered to in the field of staistics whereby they are utilised as a comparisson sample on a general study sample. A feature of random numbers that most individuals may not be aware of is that they need to have certain characteristics in order to be used correctly. These properties include the distribution of the numbers, as once there is an understanding of how the numbers are distributed for example a normal distribution, we can then use this understanding to generate our random numbers to aid in the study we are undertaking.
 
 
 In this example as reffered to below in the references section the author refers to the life time of tube lights which in itself possess a Gaussian property (symmetric bell shape curve distribution) allowing the funciton to be used to represent the probability density of a normally distributed random variable. Knowing that the life time of these bulbs is normally distributed we can generate our random numbers with a normal distribution to be used as sample data for the study for a sufficiently size sample of say 1,000 bulbs.
@@ -50,7 +49,8 @@ The Random functions in Numpy can be used to generate such sample data to be use
 
 ## 3b. Use of Permutations Functions
 
-Complete as per analysis from Jupyter Notebook
+Please refer to Shuffle Function, Permutation Function Array and Permutation Function Integer headers within the Jupyter Notebook which best explains these functions along with examples.
+
 
 ## 4. Distributions
 
@@ -130,7 +130,7 @@ Using the example of shooting star observations we can then utilise the Poisson 
 The Beta Distribution is a continious distribution that has 2 inputs required and is most widely used to determine uncertainty of the success of an experiment. The distribution itself lies on the interval (0, 1) and allow for generation of non-uniform distributions for the values that lie between 0 and 1. The two inputs or parameters required to generate the data in the random.beta function are (a, b) and determine the shape of the beta distribution generated.  
 
 
-The below KDE plot uses the beta distributions generated from the random.beta function (4 in total) to plot the points so that the influence of the different parameters can be visualised. The mean of each of the beta distributions can be calculated by using the 2 parameters (a, b) used to generated the random numbers, with the formula $$μ=\frac{a}{(a+b)}$$. As can be seen from the plot the standard deviation gets smaller the larger the values for a and b, represented by the height and width of the peak with smaller deviations being taller and narrower.
+The below KDE plot uses the beta distributions generated from the random.beta function (4 in total) to plot the points so that the influence of the different parameters can be visualised. The mean of each of the beta distributions can be calculated by using the 2 parameters (a, b) used to generated the random numbers, with the formula μ= a/(a+b). As can be seen from the plot the standard deviation gets smaller the larger the values for a and b, represented by the height and width of the peak with smaller deviations being taller and narrower.
 
 <img width="800" height="500"  src="Resources/Random_Number_Beta_Distribution_KDE.png">
 
@@ -139,23 +139,28 @@ The relatively large parameters passed into the green plot of (30, 70) resemble 
 
 ## 5. Use of Seeds
 
-### Mersenne Twister Algorithm
-The Mersenne Twister algorithm  is currently the most popular method of generating pseudorandom numbers and is distributed widely in many of todays most common methmatical software packages developed in 1997 by Makoto Matsumoto and Takuji Nishimura in Hiroshima University. The algorithm was designed with the goal of imporving on the flaws of the generators that went before it, giving a far longer period (number of steps before repeating ~(2^19937)-1), very fast at generating with an efficient use of memory.
+### Pseudorandom Numbers
+
+Pseudorandom numbers are approxamated random numbers that are generated by various different comupter softwares, a true random number is selected from a range of numbers with all the numbers in the range having both an equal and also unpredictable probability of being selected. Pseudorandom numbers rely on a seed to improve the randomness, these seeds are generally taken from the physical world such as the seconds of the current time on the system clock.
 
 
-Mersenne Twister Paragraph ......................
+The process for selecting Pseudorandom numbers is not perfect and the period will repeat itself eventually allowing theoretically for the next number in the sequence to be predicted. If properly implemented pseduorandom numbers are generally random enough for most applications that use them. Hardware random number generators are capable of producing true random numbers, this is achieved with quite simple devices that sample statistically random noise signals like thermal noise that currently have no known pattern that is predictable. 
+
+
+The Mersenne Twister algorithm  is currently the most popular method of generating pseudorandom numbers and is distributed widely in many of todays most common mathmatical software packages, it was developed in 1997 by Makoto Matsumoto and Takuji Nishimura in Hiroshima University. The algorithm was designed with the goal of imporving on the flaws of the generators that went before it, giving a far longer period (number of steps before repeating ~(2^19937)-1), very fast at generating with an efficient use of memory.
+
 
 ### Seeds in Random Numbers
 
+A seed in terms of random numbers is the starting point from which a computer generates a random number sequence, the seed can be any number but is generally derived from the seconds on a computer's system clock. When generated in this way the counter for seconds has commenced from Unix time or January 1st 1970, this allows for a huge range of seeds in the region of 0 to +1Billion thus ensuring that the same random see is not used twice.
 
 
-
-### Pseudorandom Numbers
-
+Setting a seed to a pre-determined number allows for the random numbers generated to be repeated as the starting point for the sequence will always be the same as the steps that the algorithm takes to generate the sequence although very complicated are the same each time allowing for us to predict each successive number and repeat any experimentation or analysis that we would like to replicate. 
 
 
+The sequence of pseudorandom number will eventually repeat itself as it follows a pattern, it may take a very large number of successive numbers to be generated before arrivin back at the seed but once we do so we can predict from that point (when we arrive back at the seed) each successive pseudorandom number. This concept is quite interesting to me as I am sure that there are some security measures that use pseudorandom numbers in this way to safeguard our data, and it could be possible for the security to be breached. 
 
-## Conclusion
+Although not 100% secure it is basically secure as the time it would take to figure out the numbers I am sure would outway the benefit as it would take so long, I think of this as a simple 4 digit combination lock it is not entirely secure as there are only 10,000 possible codes but the time taken to trial them all would make it unrealistic for it to be stollen in this way. This concept applies also to the random number generator just at a much larger scale.
 
 
 ## References
@@ -182,3 +187,5 @@ Mersenne Twister Paragraph ......................
 - What is a Beta Distribution [link](https://www.statisticshowto.datasciencecentral.com/beta-distribution/)
 - Beta Distribution with Examples [link](https://www.statlect.com/probability-distributions/beta-distribution)
 - Beta Distribution Overview [link](https://stephens999.github.io/fiveMinuteStats/beta.html)
+- Pseudorandom Numbers vs Random Numbers [link](https://simplicable.com/new/pseudorandom-vs-random)
+- Seed Selection [link](https://www.statisticshowto.datasciencecentral.com/random-seed-definition/##targetText=A%20random%20seed%20is%20a,Henkemans%20%26%20Lee%2C%202001)
