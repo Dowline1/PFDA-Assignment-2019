@@ -30,10 +30,6 @@ Post Francis Galton's publicaiton on the humble dice however in the mid 1940's t
 The Ferranti MK 1 was the first real computer that came pre-built with a random number instruction that generated 20 random bits at a time using electrical noise. This feature was implemented and designed by Alan Turing. The instructions however infuriated programmers at the time as it created to much uncertainty as it was impossible to test with programs as the numbers generated could no create data that demonstrated repeatability.
 
 
-### Mersenne Twister Algorithm
-
-
-
 ## 3a. Use of Simple Random Data Functions
 
 Random Numbers are generally reffered to in field of staistics whereby they are utilised as a comparisson sample on a general study sample. A feature of random numbers that most individuals may not be aware of is that they need to have certain characteristics in order to be used correctly. These properties include the distribution of the numbers, as once there is an understanding of how the numbers are distributed for example a normal distribution, we can then use this understanding to generate our random numbers to aid in the study we are undertaking.
@@ -120,7 +116,7 @@ The Poisson Distribution is a discrete distribution that is used to demonstrate 
 In my below KDE plot I simulated data using the random.poisson function to try and replicate the visualisation that was discussed in my references on the number of shooting stars in an hour period which follows a poisson distribution. In the article the author discusses watching shooting stars as a child when he was told that around 5 shooting stars were expected to occur within a 1 hour period, the 5 would become my lambda value to represent 5 shooting stars within an hour period with the number of observations set to 1,000.
 
 
-<img width="800" height="500"  src="Resources/Random_Number_Poisson_Distribution_Hist.png">
+<img width="800" height="500"  src="Resources/Random_Number_Poisson_Distribution_KDE.png">
 
 
 I went on in my analysis to include marker points on my plot to represent the statistical possibility of each number of meteorite observations to occur withing an hour period with labels of the possibility in decimal. The plot shows the probability of our lambda value of 5 occuring as being 17% and allows for additional querying of the data like the probability of 5 or more observations by simply adding the percentage from and to the points i.e. 5 or more observations equals56% probability.
@@ -129,14 +125,34 @@ I went on in my analysis to include marker points on my plot to represent the st
 Using the example of shooting star observations we can then utilise the Poisson Distribution to make predictions on the likely number of shooting stars that we will see on subsequent nights or maybe the number of flu vaccines that we may sell along with combining this with data we have on the seasonality of the flu virus and when best to have our manufacturng campaigns to meet the demand. Applications I understand from the distribution are very powerful and could be well utilised in a demand forecasting nature using the model to better place a business to take advantage of the oppurtunities of sales determined from Poisson predictions.
 
 
+### Beta Distribution
 
+The Beta Distribution is a continious distribution that has 2 inputs required and is most widely used to determine uncertainty of the success of an experiment. The distribution itself lies on the interval (0, 1) and allow for generation of non-uniform distributions for the values that lie between 0 and 1. The two inputs or parameters required to generate the data in the random.beta function are (a, b) and determine the shape of the beta distribution generated.  
+
+
+The below KDE plot uses the beta distributions generated from the random.beta function (4 in total) to plot the points so that the influence of the different parameters can be visualised. The mean of each of the beta distributions can be calculated by using the 2 parameters (a, b) used to generated the random numbers, with the formula $$μ=\frac{a}{(a+b)}$$. As can be seen from the plot the standard deviation gets smaller the larger the values for a and b, represented by the height and width of the peak with smaller deviations being taller and narrower.
+
+<img width="800" height="500"  src="Resources/Random_Number_Beta_Distribution_KDE.png">
+
+The relatively large parameters passed into the green plot of (30, 70) resemble closesly a normal distribution, however unlike the normal distribution the beta distribution is restricted to between 0 and 1.
 
 
 ## 5. Use of Seeds
 
+### Mersenne Twister Algorithm
+The Mersenne Twister algorithm  is currently the most popular method of generating pseudorandom numbers and is distributed widely in many of todays most common methmatical software packages developed in 1997 by Makoto Matsumoto and Takuji Nishimura in Hiroshima University. The algorithm was designed with the goal of imporving on the flaws of the generators that went before it, giving a far longer period (number of steps before repeating ~(2^19937)-1), very fast at generating with an efficient use of memory.
+
+
+Mersenne Twister Paragraph ......................
+
 ### Seeds in Random Numbers
 
+
+
+
 ### Pseudorandom Numbers
+
+
 
 
 ## Conclusion
@@ -161,3 +177,8 @@ Using the example of shooting star observations we can then utilise the Poisson 
 - Simulating Coin toss in Python [link](https://cmdlinetips.com/2018/12/simulating-coin-toss-experiment-with-binomial-random-numbers-using-numpy/)
 - Common Data Science Distributions [link](https://www.analyticsvidhya.com/blog/2017/09/6-probability-distributions-data-science/)
 - Poisson Distribution World Example [link](https://towardsdatascience.com/the-poisson-distribution-and-poisson-process-explained-4e2cb17d459)
+- Mersenne Twister Article [link](https://www.sciencedirect.com/topics/computer-science/mersenne-twister)
+- How does Mersenne's Twister work [link](https://www.cryptologie.net/article/331/how-does-the-mersennes-twister-work/)
+- What is a Beta Distribution [link](https://www.statisticshowto.datasciencecentral.com/beta-distribution/)
+- Beta Distribution with Examples [link](https://www.statlect.com/probability-distributions/beta-distribution)
+- Beta Distribution Overview [link](https://stephens999.github.io/fiveMinuteStats/beta.html)
